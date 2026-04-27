@@ -59,7 +59,8 @@ public class RentalController {
         rental.setSurface(surface);
         rental.setPrice(price);
         rental.setDescription(description);
-        rental.setPicture("/uploads/" + fileName);
+        //rental.setPicture("/uploads/" + fileName);
+        rental.setPicture("http://localhost:8080/uploads/" + fileName);
         rental.setOwner(owner);
 
         rentalService.save(rental);

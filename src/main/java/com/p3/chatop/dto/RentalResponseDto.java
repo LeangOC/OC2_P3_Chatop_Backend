@@ -3,7 +3,7 @@ package com.p3.chatop.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
@@ -15,6 +15,6 @@ public class RentalResponseDto {
     private String picture;
     private String description;
     private Integer owner_id;
-    private Timestamp created_at;
-    private Timestamp updated_at;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 }

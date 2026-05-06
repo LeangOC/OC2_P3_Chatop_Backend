@@ -1,8 +1,11 @@
 package com.p3.chatop.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.*;
-import java.sql.Timestamp;
+import org.hibernate.annotations.CreationTimestamp;
+
+import java.time.LocalDateTime;
 
 
 @Entity
@@ -25,5 +28,10 @@ public class Message {
 
     private String message;
 
-    private Timestamp createdAt;
+    @CreationTimestamp
+    @Column(name = "created_at", updatable = false)
+    // Pour ne pas avoir : "2026-05-04 13:15:00.582939" au niveau d'affichage
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    //  "createdAt": "2026-05-04 15:21:15"
+    private LocalDateTime createdAt;
 }
